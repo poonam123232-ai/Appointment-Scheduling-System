@@ -1,0 +1,30 @@
+.submit-btn{
+    width:50%;
+    text-decoration-color: black;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin:auto;
+    background:linear-gradient(to right,#ff105f,#ffad06);
+    border:0;
+    outline:none;
+    border-radius:30px;
+}
+h1 {
+    font-size: 20px;
+    background: -webkit-linear-gradient(#ff105f,#ffad06);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffd683d2;
+  }
+  .form__label{
+      font-weight:100px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  input{
+      border-radius: 12px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     
+  }

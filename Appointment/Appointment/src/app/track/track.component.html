@@ -1,0 +1,61 @@
+
+
+<form [formGroup]="trackForm" (ngSubmit)="trackUser()">
+    <h1><b>Track your Application</b></h1><br>
+    <div class="container">
+    <div class="mb-3 mt-3" class="form-group">
+        <div class="mb-3" class="form-group">
+<br>
+            <label for="AppId" ><b>Enter your Application Id</b></label><br><br>
+            <input type="number" class="form-control" formControlName="AppId" placeholder="App Id" width="20"><br>
+           
+          </div>
+          <button type="submit" class="btn btn-danger" [disabled]="trackForm.invalid" >Track</button><br>
+              
+            
+    </div>
+  </div>
+  <br>
+  <br>
+</form>
+
+<div class="container1" *ngIf="table">
+  <table >
+    <tr>
+      <!-- <th>App ID</th> -->
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <th>Reason</th>
+      <th>Schedule Date</th>
+      <th>Reschedule Date</th>
+
+    </tr>
+    <tr  >
+      <!-- <td>{{track.appId}}</td> -->
+      <td> {{track.firstName}} </td>
+      <td> {{track.lastName}} </td>
+      <td> {{track.phone}} </td>
+      <td> {{track.reason}} </td>
+      <td> {{track.scheduleDate}} </td>
+      <td> {{track.rescheduleDate}} </td>
+
+    </tr>
+  
+  </table>
+  <div class="dropdown">
+    <button>Action</button>
+    <div class="dropdown-content">
+    <a (click)="deleteUser()">Cancel</a>
+    <a (click)="reschedule()">Reschedule</a>
+
+    </div>
+  </div>
+  <form [formGroup]="trackForm" (ngSubmit)="update()">
+    <div class="resd" *ngIf="resd">
+
+      <input min="{{c |date:'yyyy-MM-dd'}}" max="{{ d | date:'yyyy-MM-dd'}}" type="date" formControlName="rescheduleDate" id="rescheduleDate">
+      <button type="submit" >rescheduleDate</button>
+    </div>
+  </form>     
+</div>

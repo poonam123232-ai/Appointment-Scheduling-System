@@ -1,0 +1,139 @@
+
+
+<!-- <div class="vh-100" style="background-color: #ffffff00;" > -->
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center">
+
+          <form [formGroup]="bookForm">
+            <h1><b>Appointment Booking</b></h1><br>
+            <div class="mb-3 mt -3" class="form-group">
+              <label for="UserId" class="form__label">User Id</label><br>
+              <input type="number" class="form-control" formControlName="UserId" placeholder="User Id" />
+              <div class="text-danger"
+                *ngIf="bookForm.controls['UserId'].invalid && (bookForm.controls['UserId'].dirty || bookForm.controls['UserId'].touched)">
+                <span *ngIf="bookForm.controls['UserId'].errors?.['UserId']">User Id is required</span>
+              </div>
+</div>
+<br>
+            <div class="mb-3 mt-3" class="form-group">
+              
+                <label for="FirstName" class="form__label">First Name</label><br>
+                <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name" />
+                <div class="text-danger"
+                  *ngIf="bookForm.controls['FirstName'].invalid && (bookForm.controls['FirstName'].dirty || bookForm.controls['FirstName'].touched)">
+                  <span *ngIf="bookForm.controls['FirstName'].errors?.['required']">First Name is
+                    required</span>
+                  <span *ngIf="bookForm.controls['FirstName'].errors?.['pattern']">Enter a valid name</span>
+                </div>
+              </div>
+                  <br>
+
+              <div class="mb-3 mt -3" class="form-group">
+                      <label for="LastName" class="form__label">Last Name</label><br>
+                      <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name" />
+                      <div class="text-danger"
+                        *ngIf="bookForm.controls['LastName'].invalid && (bookForm.controls['LastName'].dirty || bookForm.controls['LastName'].touched)">
+                        <span *ngIf="bookForm.controls['LastName'].errors?.['required']"> Last Name is
+                          required</span>
+                        <span *ngIf="bookForm.controls['LastName'].errors?.['pattern']">Enter a valid name</span>
+                      </div>
+              </div>
+                        <br>
+                        <!-- Age -->
+              <div class="mb-3 mt -3" class="form-group">
+                            <label for="Age" class="form__label">Age</label><br>
+                            <input type="number" class="form-control" formControlName="Age" placeholder="Age" />
+                            <div class="text-danger"
+                              *ngIf="bookForm.controls['Age'].invalid && (bookForm.controls['Age'].dirty || bookForm.controls['Age'].touched)">
+                              <span *ngIf="bookForm.controls['Age'].errors?.['required']">Age is required</span>
+                            </div>
+              </div>
+
+                              <br>
+                              <!-- 
+                                    Gender -->
+              <div class="mb-3 mt -3" class="form-group">
+                                  <label for="Gender" class="form__label">Gender</label><br>
+                                  <input type="radio" name="Gender" id="female" formControlName="Gender" value="F" >Female
+                                  <input type="radio" name="Gender" id="male" formControlName="Gender" value="M" >Male
+                                  
+                                  
+              </div>
+              <br>
+
+                                  
+              <div class="mb-3 mt-3" class="form-group">
+                                    <!-- Create input fields with appropriate labels and formcontrols for Email Address -->
+                                    <label for="Email" class="form__label">Email Address</label><br>
+                                    <input type="email" class="form-control" formControlName="Email"
+                                      placeholder="Email Id"><br>
+                                    <div class="text-danger"
+                                      *ngIf="bookForm.controls['Email'].invalid && (bookForm.controls['Email'].dirty || bookForm.controls['Email'].touched)">
+                                      <!-- Message for required error ==> This field is required -->
+                                      <span *ngIf="bookForm.controls['Email'].errors?.['required']">This field is
+                                        required</span>
+                                      <!-- Message for correct format email error ==> The correct email is required -->
+                                      <span *ngIf="bookForm.controls['Email'].errors?.['pattern']">Enter the valid email
+                                        id</span>
+                                      <!-- </div> -->
+                                    </div>
+                </div>
+
+
+                <div class="mb-3 mt -3" class="form-group">
+                                        <label for="Phone" class="form__label">Mobile Number</label><br>
+                                        <input type="number" class="form-control" formControlName="Phone"
+                                          placeholder="Mobile Number" />
+                                        <div class="text-danger"
+                                          *ngIf="bookForm.controls['Phone'].invalid  && (bookForm.controls['Phone'].dirty || bookForm.controls['Phone'].touched)">
+                                          <span *ngIf="bookForm.controls['Phone'].errors?.['required']">Mobile number is
+                                            required</span>
+                                          <span *ngIf="bookForm.controls['Phone'].errors?.['pattern']">Enter a 10 digit
+                                            valid
+                                            mobile
+                                            number</span>
+                                        </div>
+                </div>
+                                          <br>
+
+
+                <div class="mb-3" class="form-group">
+
+                                                <label for="ScheduleDate"><b>Appointment Date</b></label><br><br>
+                                                <input min="{{c | date:'yyyy-MM-dd'}}" max="{{ d | date:'yyyy-MM-dd'}}"
+                                                  class="is" formControlName="ScheduleDate" name="ScheduleDate" type="date">
+                                                <br><span *ngIf="bookForm.controls['ScheduleDate'].errors?.['required']">This
+                                                  field is required</span>
+                </div>
+                <br>
+                <div class="mb-3 mt -3" class="form-group">
+                  <label for="Reason" class="form__label">Reason</label><br>
+                  <select name="Reason" id="Reason" formControlName="Reason">
+                    <option value="" >Choose Reason</option>
+                    <option value="Address Change">Address Change</option>
+                    <option value="New Passport">New Passport</option>
+                    <option value="Renewal">Renewal</option>
+
+
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="bookForm.controls['Reason'].invalid && (bookForm.controls['Reason'].dirty || bookForm.controls['Reason'].touched)">
+                    <span *ngIf="bookForm.controls['Reason'].errors?.['required']">Age is required</span>
+                  </div>
+    </div>
+                                                <br>
+                                                <button type="submit" class="submit-btn" [disabled]="bookForm.invalid"
+                                                  (click)="bookUser()"
+                                                  style="color:rgb(38, 206, 23);">Confirm</button><br>
+                                                <hr>
+                                              
+          </form>
+          <a id="a" routerLink="/track">Track your Application</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

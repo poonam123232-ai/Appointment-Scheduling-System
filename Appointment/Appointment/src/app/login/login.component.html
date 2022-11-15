@@ -1,0 +1,55 @@
+
+<!-- <div class="vh-100" style="background-color: #ffffff00;" > -->
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+    
+            <form [formGroup]="loginForm">
+              <h1><b>Login</b></h1><br>
+                  <div class="mb-3 mt-3" class="form-group">
+                    <!-- Create input fields with appropriate labels and formcontrols for Email Address -->
+                    <label for="User_Id">User Id</label><br>
+                    <input type="number" class="form-control" formControlName="User_Id" placeholder="User Id">
+                    <div class="text-danger"
+                      *ngIf="loginForm.controls['User_Id'].invalid && (loginForm.controls['User_Id'].dirty || loginForm.controls['User_Id'].touched)">
+                      <!-- Message for required error ==> This field is required -->
+                      <span *ngIf="loginForm.controls['User_Id'].errors?.['required']">This field is required</span>
+                      <!-- Message for correct format email error ==> The correct email is required -->
+                      <!-- <span *ngIf="loginForm.controls['User_Id'].errors?.['pattern']">Enter the valid email id</span> -->
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                  <br>
+                  <div class="mb-3" class="form-group">
+                    
+                    <label for="Passw">Password</label><br>
+                    <input type="password" class="form-control" formControlName="Passw" placeholder="Password"><br>
+                    <div
+                      *ngIf="loginForm.controls['Passw'].invalid && (loginForm.controls['Passw'].dirty || loginForm.controls['Passw'].touched)"
+                      class="text-danger">
+                      
+                      <span *ngIf="loginForm.controls['Passw'].errors?.['required']">This field is required</span>
+                      
+                      <span *ngIf="loginForm.controls['Passw'].errors?.['pattern']">Must have at least one upper
+                        case one lowercase one digit and one special character</span>
+                    </div>
+                  </div>
+                  <!-- <div class="mb-3 form-check" class="form-group">
+                    
+                    <input type="checkbox" formControlName="rememberMe"/>
+                    <label>Remember Password</label>
+                  </div> -->
+                  <br>
+                  <button type="submit" class="submit-btn" [disabled]="loginForm.invalid" (click)="logInUser()" style="color:black;">Login</button><br>
+                  
+                  <p> New user..?</p>
+                  <p>  <a [routerLink]='["/registration"]' routerLinkActive="active">Register</a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    

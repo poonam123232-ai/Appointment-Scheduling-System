@@ -1,0 +1,130 @@
+<section class="vh-100" style="background-color: #ffffff00;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <form [formGroup]="registrationform" class="form">
+              <h1><b>Create New Account</b></h1><br>
+              <!-- <div class="form__text">
+                  Create New Account
+              </div> -->
+              <div class="mb-3 mt-3" class="form-group">
+                <div class="mb-3 mt -3" class="form-group">
+                  <label for="FirstName" class="form__label">First Name</label><br>
+                  <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name" />
+                  <div class="text-danger"
+                    *ngIf="registrationform.controls['FirstName'].invalid && (registrationform.controls['FirstName'].dirty || registrationform.controls['FirstName'].touched)">
+                    <span *ngIf="registrationform.controls['FirstName'].errors?.['required']">First Name is
+                      required</span>
+                    <span *ngIf="registrationform.controls['FirstName'].errors?.['pattern']">Enter a valid name</span>
+
+                  </div>
+                </div>
+                <br>
+
+                <div class="mb-3 mt-3" class="form-group">
+                  <div class="mb-3 mt -3" class="form-group">
+                    <label for="LastName" class="form__label">Last Name</label><br>
+                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name" />
+                    <div class="text-danger"
+                      *ngIf="registrationform.controls['LastName'].invalid && (registrationform.controls['LastName'].dirty || registrationform.controls['LastName'].touched)">
+                      <span *ngIf="registrationform.controls['LastName'].errors?.['required']"> Last Name is
+                        required</span>
+                      <span *ngIf="registrationform.controls['LastName'].errors?.['pattern']">Enter a valid name</span>
+
+                    </div>
+                  </div>
+                  <br>
+                  <!-- Age -->
+                  <div class="mb-3 mt-3" class="form-group">
+                    <div class="mb-3 mt -3" class="form-group">
+                      <label for="Age" class="form__label">Age</label><br>
+                      <input type="number" class="form-control" formControlName="Age" placeholder="Age" />
+                      <div class="text-danger"
+                        *ngIf="registrationform.controls['Age'].invalid && (registrationform.controls['Age'].dirty || registrationform.controls['Age'].touched)">
+                        <span *ngIf="registrationform.controls['Age'].errors?.['required']">Age is required</span>
+
+
+                      </div>
+                    </div>
+                    <br>
+                    <!-- 
+                      Gender -->
+                    <div class="mb-3 mt-3" class="form-group">
+                      <div class="mb-3 mt -3" class="form-group">
+                        <label for="Gender" class="form__label">Gender</label><br>
+                        <input type="radio" id="male"  formControlName="Gender" value="M" />Male
+                        <input type="radio" id="female"  formControlName="Gender" value="F" />Female
+
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="mb-3 mt-3" class="form-group">
+                      <!-- Create input fields with appropriate labels and formcontrols for Email Address -->
+                      <label for="Email" class="form__label">Email Address</label><br>
+                      <input type="email" class="form-control" formControlName="Email" placeholder="Email Id"><br>
+                      <div class="text-danger"
+                        *ngIf="registrationform.controls['Email'].invalid && (registrationform.controls['Email'].dirty || registrationform.controls['Email'].touched)">
+                        <!-- Message for required error ==> This field is required -->
+                        <span *ngIf="registrationform.controls['Email'].errors?.['required']">This field is
+                          required</span>
+                        <!-- Message for correct format email error ==> The correct email is required -->
+                        <span *ngIf="registrationform.controls['Email'].errors?.['pattern']">Enter the valid email
+                          id</span>
+                        <!-- </div> -->
+                      </div>
+                    </div>
+
+
+
+                    <div class="mb-3 mt -3" class="form-group">
+                      <label for="Phone" class="form__label">Mobile Number</label><br>
+                      <input type="number" class="form-control" formControlName="Phone" placeholder="Mobile Number" />
+                      <div class="text-danger"
+                        *ngIf="registrationform.controls['Phone'].invalid  && (registrationform.controls['Phone'].dirty || registrationform.controls['Phone'].touched)">
+                        <span *ngIf="registrationform.controls['Phone'].errors?.['required']">Mobile number is
+                          required</span>
+                        <span *ngIf="registrationform.controls['Phone'].errors?.['pattern']">Enter a 10 digit valid
+                          mobile
+                          number</span>
+
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="mb-3 mt -3" class="form-group">
+                      <label for="Passw" class="form__label">Password</label><br>
+                      <input type="password" class="form-control" formControlName="Passw" placeholder="Password" />
+                      <div class="text-danger"
+                        *ngIf="registrationform.controls['Passw'].invalid && (registrationform.controls['Passw'].dirty || registrationform.controls['Passw'].touched)">
+                        <span *ngIf="registrationform.controls['Passw'].errors?.['required']">Password is
+                          required</span>
+                        <span *ngIf="registrationform.controls['Passw'].errors?.['pattern']">Must have at least one
+                          upper
+                          case one lowercase
+                          one digit and one special character</span>
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="form__button">
+                      <!-- <a href="#" class="btn" [disabled]="registrationform.invalid" (click)="registerUser()">Register</a> -->
+
+                      <button type="submit" class="submit-btn" [disabled]="registrationform.invalid"
+                        (click)="registerUser()" style="color:black;">Register</button>
+                    </div>
+              </div>
+
+            
+
+          </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

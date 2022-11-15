@@ -1,0 +1,42 @@
+Use Projects
+create table Userss
+(User_Id  int primary key  identity(202200,01), 
+First_name varchar(40), Last_name varchar(30), Age int, Gender varchar(5),
+Email varchar(30) ,Phone bigint, Passw varchar(30) )
+
+insert into Users(First_name, Last_name,Age,Gender,Email , Phone, Passw) 
+values
+('Ashok', 'vardan', 25, 'M', 'Arya@gmail.com', 9900223388, 'Arya@123'),
+('Asha', 'gowda', 23, 'F', 'Asha@gmail.com', 8899776655, 'Asha@123')
+
+select * from Userss
+
+create table Admins(Admin_Id  varchar(14) primary key , 
+First_name varchar(40), Last_name varchar(30), Age int, Gender varchar(5),
+Email varchar(30) ,Phone bigint, Passw varchar(30) )
+
+insert into Admins values
+('A0001', 'Arya', 'vardan', 25, 'M', 'kanta@gmail.com', 9900223388, 'Kanta@123'),
+('A0002','Asha', 'gowda', 23, 'F', 'Asha@gmail.com', 8899776655, 'Asha@123')
+
+select * from Admins
+
+
+create table Appointments
+(	User_Id int,First_name varchar(40), Last_name varchar(30), Age int, Gender varchar(5),
+Email varchar(30) ,Phone bigint,
+	app_id int not null primary key identity (2022000,1),
+	schedule_date varchar(30),Reason varchar(25),
+	reschedule_date varchar(40),
+	foreign key(User_Id) references Users(User_Id))
+
+	insert into Appointments(User_Id, First_name, Last_name, Age, Gender, Email,
+	Phone,schedule_date,Reason, reschedule_date) values
+		(202200,'Asha', 'gowda', 23, 'F','asha@gmaiiil.com',9988776655, '20-11-2022','new passport',''),
+	(202200,'nIthesh', 'gowda', 23, 'M','nithesh@gmaiiil.com',6688776612, '10-11-2022','Address Change','')
+	select *from Appointments
+
+
+	drop table Appointments
+	alter table Appointmentss drop Primary key, add p(Phone)
+drop table Admin
